@@ -1,5 +1,13 @@
 ;; Emacs Configuration File
 
+;; Load Path
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
+
+(add-to-list 'load-path "~/.emacs.d/packages/color-theme")
+(require 'color-theme)
+(eval-after-load "color-theme" '(progn (color-theme-initialize)))
+
 ;; Disabling the startup screen
 (setq inhibit-startup-message t)
 
@@ -7,6 +15,12 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+;; Color theme
+(require 'color-theme-wombat)
+(if window-system
+   (color-theme-wombat))
+(add-hook 'after-make-frame-functions 'color-theme-wombat)
 
 ;; Scroll one line at a time
 (setq scroll-step 1)
