@@ -1,1 +1,56 @@
 ;; Emacs Configuration File
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; Scroll one line at a time
+(setq scroll-step 1)
+
+;; Show line and column numbers on minibuffer
+(line-number-mode 1)
+(column-number-mode 1)
+
+;; Enable delete selection mode
+(delete-selection-mode 1)
+
+;; Avoid backup file creation
+(setq make-backup-files nil)
+
+;; Undo
+(global-set-key (kbd "C-z") 'undo)
+
+;; Default tab width for C
+(setq-default c-basic-offset 8)
+
+;; Default tab width
+(setq-default tab-width 2)
+
+;; Fontsize := 10
+;; (set-face-attribute 'default nil :height 110)
+
+;; Inserts 'TAB' character instead of spaces
+(setq-default indent-tabs-mode t)
+
+;; Uncomment Region
+(global-set-key (kbd "C-c C-v") 'uncomment-region)
+
+;; Comment Region
+(global-set-key (kbd "C-c C-c") 'comment-region)
+
+;; Displays given message in scratch by default
+(setq initial-scratch-message ";; Scratch Buffer [Emacs @ Elixir]\n\n\n")
+
+;; Display Persitent Time, Day and Date
+(setq display-time-day-and-date t) (display-time)
+
+;; Enable Copy To X-Clipboard
+(setq x-select-enable-clipboard t)
+
+;; Switch Buffers
+(global-set-key [s-right] 'next-buffer)
+(global-set-key [s-left] 'previous-buffer)
+
+;; Enable clearing of buffer
+(put 'erase-buffer 'disabled nil)
+
