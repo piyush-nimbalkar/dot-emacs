@@ -22,6 +22,15 @@
    (color-theme-wombat))
 (add-hook 'after-make-frame-functions 'color-theme-wombat)
 
+;; Toggle fullscreen
+(defun toggle-fullscreen()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+(global-set-key [f11] 'toggle-fullscreen)
+
+;; Open Emacs In Full Screen Mode By Default
+(set-frame-parameter nil 'fullscreen 'fullboth)
+
 ;; Scroll one line at a time
 (setq scroll-step 1)
 
