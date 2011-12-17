@@ -1,12 +1,19 @@
-;; Emacs Configuration File
+;; Emacs Configuration File ;;
 
 ;; Load Path
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
+(normal-top-level-add-subdirs-to-load-path)
 
-(add-to-list 'load-path "~/.emacs.d/packages/color-theme")
+;; Initialize Color Theme
 (require 'color-theme)
 (eval-after-load "color-theme" '(progn (color-theme-initialize)))
+
+;; Select Color Theme Wombat
+(require 'color-theme-wombat)
+(if window-system
+   (color-theme-wombat))
+(add-hook 'after-make-frame-functions 'color-theme-wombat)
 
 ;; Disabling the startup screen
 (setq inhibit-startup-message t)
@@ -15,12 +22,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
-;; Color theme
-(require 'color-theme-wombat)
-(if window-system
-   (color-theme-wombat))
-(add-hook 'after-make-frame-functions 'color-theme-wombat)
 
 ;; Toggle fullscreen
 (defun toggle-fullscreen()
@@ -36,7 +37,7 @@
       ido-use-filename-at-point 'guess
       ido-max-prospects 10)
 
-(add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
+;; Auto Complete
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
 (ac-config-default)
@@ -94,3 +95,12 @@
 ;; Enable clearing of buffer
 (put 'erase-buffer 'disabled nil)
 
+;; This was installed by package-install.el.
+;; This provides support for the package system and
+;; interfacing with ELPA, the package archive.
+;; Move this code earlier if you want to reference
+;; packages in your .emacs.
+(when
+		(load
+		 (expand-file-name "~/.emacs.d/elpa/package.el"))
+	(package-initialize))
