@@ -3,9 +3,10 @@
 ;; Load Path
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
-(normal-top-level-add-subdirs-to-load-path)
+;; (normal-top-level-add-subdirs-to-load-path)
 
 ;; Initialize Color Theme
+(add-to-list 'load-path "~/.emacs.d/packages/color-theme")
 (require 'color-theme)
 (eval-after-load "color-theme" '(progn (color-theme-initialize)))
 
@@ -38,6 +39,7 @@
       ido-max-prospects 10)
 
 ;; Auto Complete
+(add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
 (ac-config-default)
