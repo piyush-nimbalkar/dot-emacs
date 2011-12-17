@@ -36,6 +36,11 @@
       ido-use-filename-at-point 'guess
       ido-max-prospects 10)
 
+(add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
+(ac-config-default)
+
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
