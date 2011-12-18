@@ -5,6 +5,9 @@
                     (or (buffer-file-name) load-file-name)))
 ;; (normal-top-level-add-subdirs-to-load-path)
 
+
+(require 'cl)
+
 ;; Initialize Color Theme
 (add-to-list 'load-path "~/.emacs.d/packages/color-theme")
 (require 'color-theme)
@@ -106,3 +109,8 @@
 		(load
 		 (expand-file-name "~/.emacs.d/elpa/package.el"))
 	(package-initialize))
+
+;; Rails-reloaded - Support Rails - Option to relaoded
+;; Need to fix some issues
+(setq load-path (cons (expand-file-name "~/.emacs.d/packages/rails-reloaded") load-path))
+(require 'rails-autoload)
