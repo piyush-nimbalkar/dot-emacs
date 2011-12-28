@@ -97,6 +97,10 @@
 (global-set-key [s-right] 'next-buffer)
 (global-set-key [s-left] 'previous-buffer)
 
+;; Switch Frames
+(global-set-key [s-tab] 'next-multiframe-window)
+(global-set-key [S-s-iso-lefttab] 'previous-multiframe-window)
+
 ;; Enable clearing of buffer
 (put 'erase-buffer 'disabled nil)
 
