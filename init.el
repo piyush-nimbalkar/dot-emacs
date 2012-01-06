@@ -104,6 +104,9 @@
 ;; Enable clearing of buffer
 (put 'erase-buffer 'disabled nil)
 
+;; Remove WhiteSpace before every save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; This was installed by package-install.el.
 ;; This provides support for the package system and
 ;; interfacing with ELPA, the package archive.
