@@ -126,3 +126,66 @@
 (add-to-list 'load-path "~/.emacs.d/packages/cucumber")
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; Duplicate current line
+(defun duplicate-current-line ()
+	"Duplicate current line"
+  (interactive)
+  (let ((str (concat
+    (buffer-substring (point)
+      (save-excursion (end-of-line) (point)))
+	      "\n"
+	       (buffer-substring (save-excursion (beginning-of-line) (point))
+				 (point)))))
+    (insert str)))
+(global-set-key "\C-cd" 'duplicate-current-line)
+
+;; Duplicate current paragraph
+(defun duplicate-paragraph()
+  "Duplicate a paragraph"
+  (interactive)
+  (let ((beg (line-beginning-position))
+        (end (save-excursion (forward-paragraph) (point))))
+    (copy-region-as-kill beg end)
+    (yank)))
+(global-set-key "\C-cf" 'duplicate-paragraph)
+
+;; Move lines up and down
+(defun move-text-internal (arg)
+  (cond
+   ((and mark-active transient-mark-mode)
+    (if (> (point) (mark))
+        (exchange-point-and-mark))
+    (let ((column (current-column))
+          (text (delete-and-extract-region (point) (mark))))
+      (forward-line arg)
+      (move-to-column column t)
+      (set-mark (point))
+      (insert text)
+      (exchange-point-and-mark)
+      (setq deactivate-mark nil)))
+   (t
+    (let ((column (current-column)))
+      (beginning-of-line)
+      (when (or (> arg 0) (not (bobp)))
+        (forward-line)
+        (when (or (< arg 0) (not (eobp)))
+          (transpose-lines arg))
+        (forward-line -1))
+      (move-to-column column t)))))
+
+(defun move-text-down (arg)
+  "Move region (transient-mark-mode active) or current line
+  arg lines down."
+  (interactive "*p")
+  (move-text-internal arg))
+
+
+(defun move-text-up (arg)
+  "Move region (transient-mark-mode active) or current line
+  arg lines up."
+  (interactive "*p")
+  (move-text-internal (- arg)))
+
+(global-set-key [M-S-up] 'move-text-up)
+(global-set-key [M-S-down] 'move-text-down)
