@@ -121,3 +121,8 @@
 ;; Need to fix some issues
 (setq load-path (cons (expand-file-name "~/.emacs.d/packages/rails-reloaded") load-path))
 (require 'rails-autoload)
+
+;; Cucumber
+(add-to-list 'load-path "~/.emacs.d/packages/cucumber")
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
