@@ -203,3 +203,6 @@
 
 (global-set-key [M-S-up] 'move-text-up)
 (global-set-key [M-S-down] 'move-text-down)
+
+;; Use ibuffer instead of the default annoying one
+(global-set-key (kbd "C-x C-b") 'ibuffer)
