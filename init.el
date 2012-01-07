@@ -93,6 +93,21 @@
 ;; Enable Copy To X-Clipboard
 (setq x-select-enable-clipboard t)
 
+;; Inserts 'SPACES' character instead of TAB
+(setq-default indent-tabs-mode nil)
+
+;; Enable Linum Mode globally
+(global-linum-mode 1)
+
+;; Show Parenthesis
+(show-paren-mode 1)
+
+;; Jump the pointer when it is close to the cursor
+(mouse-avoidance-mode 'jump)
+
+;; Answer with just Y/N
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; Switch Buffers
 (global-set-key [s-right] 'next-buffer)
 (global-set-key [s-left] 'previous-buffer)
@@ -179,7 +194,6 @@
   arg lines down."
   (interactive "*p")
   (move-text-internal arg))
-
 
 (defun move-text-up (arg)
   "Move region (transient-mark-mode active) or current line
