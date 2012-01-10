@@ -206,3 +206,9 @@
 
 ;; Use ibuffer instead of the default annoying one
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Ruby Electric Mode should be switched on for *.rb files
+(add-hook 'ruby-mode-hook
+      (lambda()
+        (require 'ruby-electric)
+        (ruby-electric-mode t)))
