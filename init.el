@@ -212,3 +212,20 @@
       (lambda()
         (require 'ruby-electric)
         (ruby-electric-mode t)))
+
+;; Search anything using 'anything' !! Extra configs for the mode
+(add-to-list 'load-path "~/.emacs.d/packages/anything-config")
+(require 'anything-config)
+
+;; Configuring anything mode
+(global-set-key (kbd "C-x b")
+  (lambda() (interactive)
+    (anything
+     :prompt "Switch to: "
+     :candidate-number-limit 10                 ;; up to 10 of each
+     :sources
+     '( anything-c-source-buffers               ;; buffers
+        anything-c-source-recentf               ;; recent files
+        anything-c-source-bookmarks             ;; bookmarks
+        anything-c-source-files-in-current-dir+ ;; current dir
+        anything-c-source-locate))))            ;; use 'locate'
