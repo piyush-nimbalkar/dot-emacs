@@ -229,3 +229,8 @@
         anything-c-source-bookmarks             ;; bookmarks
         anything-c-source-files-in-current-dir+ ;; current dir
         anything-c-source-locate))))            ;; use 'locate'
+
+;; SCSS Mode
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
