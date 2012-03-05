@@ -37,6 +37,7 @@
 (ido-mode t)
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
+      ido-everywhere t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
       ido-max-prospects 10)
@@ -234,3 +235,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+(global-set-key [(C =)] 'text-scale-increase)
+(global-set-key [(C -)] 'text-scale-decrease)
