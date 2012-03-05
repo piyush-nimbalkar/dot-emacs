@@ -62,7 +62,7 @@
 (defun color-theme-wombat (&optional frame)
   "The wombat color theme for Emacs."
   (interactive)
-  ;; set font 
+  ;; set font
   (set-frame-parameter frame 'font "Ubuntu Mono-13")
   (color-theme-install
    `(color-theme-wombat
@@ -124,7 +124,8 @@
 				    :box (:line-width 1 :style released-button)))))
      (org-date ((t (:foreground "#8cd0d3" :underline t))))
      (org-deadline-announce ((t (:foreground "#bc8383"))))
-     (org-done ((t (:bold t :weight bold :foreground "#afd8af"))))
+     (org-todo ((t (:bold t :weight bold :foreground "red"))))
+     (org-done ((t (:bold t :weight bold :foreground "green"))))
      (org-formula ((t (:foreground "#d0bf8f"))))
      (org-headline-done ((t (:foreground "#afd8af"))))
      (org-level-1 ((t (:foreground "#dfaf8f"))))
@@ -191,4 +192,4 @@
      (diff-context ((t (:inherit font-lock-comment-face)))))))
 
 (provide 'color-theme-wombat)
-     
+
