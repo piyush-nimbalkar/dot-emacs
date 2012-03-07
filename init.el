@@ -265,6 +265,19 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; Yaml Mode
 (add-to-list 'load-path "~/.emacs.d/elpa/yaml-mode-0.0.5")
 (autoload 'yaml-mode "yaml-mode")
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+;; Yasnippet Mode
+(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/global-mode 1)
+
+;; Dropdown List for yasnipppet completions
+(require 'dropdown-list)
+(setq yas/prompt-functions '(yas/dropdown-prompt
+                             yas/ido-prompt
+                             yas/completing-prompt))
