@@ -40,7 +40,15 @@
       ido-everywhere t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
-      ido-max-prospects 10)
+      ido-max-prospects 20)
+
+;; Display ido results vertically, rather than horizontally
+(setq ido-decorations (quote ("\n-> " "\n" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+
+;; IdoMenu - Easy toggling between functions of a file
+(add-to-list 'load-path "~/.emacs.d/packages/idomenu")
+(require 'idomenu)
+(autoload 'idomenu "idomenu" nil t)
 
 ;; Auto Complete
 (add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
@@ -236,9 +244,11 @@
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
+;; Scale the font-size
 (global-set-key [(C =)] 'text-scale-increase)
 (global-set-key [(C -)] 'text-scale-decrease)
 
+;; Custom Variables (Auto-Generated)
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
