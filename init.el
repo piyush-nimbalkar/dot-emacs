@@ -281,3 +281,9 @@
 (setq yas/prompt-functions '(yas/dropdown-prompt
                              yas/ido-prompt
                              yas/completing-prompt))
+
+;; Zencoding Mode
+(add-to-list 'load-path "~/.emacs.d/packages/zencoding/")
+(require 'zencoding-mode)
+(add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
+(require 'zencoding-trie)
