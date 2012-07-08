@@ -63,7 +63,7 @@
   "The wombat color theme for Emacs."
   (interactive)
   ;; set font
-  (set-frame-parameter frame 'font "Ubuntu Mono-13")
+  (set-frame-parameter frame 'font "Menlo-13")
   (color-theme-install
    `(color-theme-wombat
      ((background-color . ,wombat-bg)
@@ -192,4 +192,3 @@
      (diff-context ((t (:inherit font-lock-comment-face)))))))
 
 (provide 'color-theme-wombat)
-
