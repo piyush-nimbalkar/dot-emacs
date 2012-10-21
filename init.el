@@ -294,3 +294,8 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'no-easy-keys)
 (no-easy-keys 1)
+
+;; Golden Ratio
+(add-to-list 'load-path "~/.emacs.d/packages/golden-ratio")
+(require 'golden-ratio)
+(golden-ratio-enable)
