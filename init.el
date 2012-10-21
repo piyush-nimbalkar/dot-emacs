@@ -27,6 +27,10 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Changing keybindings for Mac
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+
 ;; Toggle fullscreen
 (defun toggle-fullscreen()
   (interactive)
