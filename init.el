@@ -126,8 +126,7 @@
 (global-set-key [s-left] 'previous-buffer)
 
 ;; Switch Frames
-(global-set-key [s-tab] 'next-multiframe-window)
-(global-set-key [S-s-iso-lefttab] 'previous-multiframe-window)
+(global-set-key [C-tab] 'next-multiframe-window)
 
 ;; Enable clearing of buffer
 (put 'erase-buffer 'disabled nil)
@@ -291,7 +290,7 @@
 (require 'zencoding-trie)
 
 ;; No Easy Keys
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/packages/no-easy-keys")
 (require 'no-easy-keys)
 (no-easy-keys 1)
 
@@ -299,3 +298,5 @@
 (add-to-list 'load-path "~/.emacs.d/packages/golden-ratio")
 (require 'golden-ratio)
 (golden-ratio-enable)
+
+(server-start)
