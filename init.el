@@ -300,10 +300,19 @@
 
 (server-start)
 
+;; Find Files In Project
 (add-to-list 'load-path "~/.emacs.d/packages/find-file-in-project")
 (require 'find-file-in-project)
-(global-set-key (kbd "C-c f") 'find-file-in-project)
+(global-set-key (kbd "C-x f") 'find-file-in-project)
 
+;; Expand Region Mode
 (add-to-list 'load-path "~/.emacs.d/packages/expand-region")
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+;; Smex
+(add-to-list 'load-path "~/.emacs.d/packages/smex")
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
