@@ -16,7 +16,7 @@
 ;; Select Color Theme Wombat
 (require 'color-theme-wombat)
 (if window-system
-   (color-theme-wombat))
+    (color-theme-wombat))
 (add-hook 'after-make-frame-functions 'color-theme-wombat)
 
 ;; Disabling the startup screen
@@ -138,9 +138,9 @@
 ;; Move this code earlier if you want to reference
 ;; packages in your .emacs.
 (when
-		(load
-		 (expand-file-name "~/.emacs.d/elpa/package.el"))
-	(package-initialize))
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
 
 ;; Rails-reloaded - Support Rails - Option to relaoded
 ;; Need to fix some issues
@@ -154,14 +154,14 @@
 
 ;; Duplicate current line
 (defun duplicate-current-line ()
-	"Duplicate current line"
+  "Duplicate current line"
   (interactive)
   (let ((str (concat
-    (buffer-substring (point)
-      (save-excursion (end-of-line) (point)))
-	      "\n"
-	       (buffer-substring (save-excursion (beginning-of-line) (point))
-				 (point)))))
+              (buffer-substring (point)
+                                (save-excursion (end-of-line) (point)))
+              "\n"
+              (buffer-substring (save-excursion (beginning-of-line) (point))
+                                (point)))))
     (insert str)))
 (global-set-key "\C-cd" 'duplicate-current-line)
 
@@ -219,9 +219,9 @@
 
 ;; Ruby Electric Mode should be switched on for *.rb files
 (add-hook 'ruby-mode-hook
-      (lambda()
-        (require 'ruby-electric)
-        (ruby-electric-mode t)))
+          (lambda()
+            (require 'ruby-electric)
+            (ruby-electric-mode t)))
 
 ;; Search anything using 'anything' !! Extra configs for the mode
 (add-to-list 'load-path "~/.emacs.d/packages/anything-config")
@@ -229,16 +229,16 @@
 
 ;; Configuring anything mode
 (global-set-key (kbd "C-x b")
-  (lambda() (interactive)
-    (anything
-     :prompt "Switch to: "
-     :candidate-number-limit 10                 ;; up to 10 of each
-     :sources
-     '( anything-c-source-buffers               ;; buffers
-        anything-c-source-recentf               ;; recent files
-        anything-c-source-bookmarks             ;; bookmarks
-        anything-c-source-files-in-current-dir+ ;; current dir
-        anything-c-source-locate))))            ;; use 'locate'
+                (lambda() (interactive)
+                  (anything
+                   :prompt "Switch to: "
+                   :candidate-number-limit 10                 ;; up to 10 of each
+                   :sources
+                   '( anything-c-source-buffers               ;; buffers
+                      anything-c-source-recentf               ;; recent files
+                      anything-c-source-bookmarks             ;; bookmarks
+                      anything-c-source-files-in-current-dir+ ;; current dir
+                      anything-c-source-locate))))            ;; use 'locate'
 
 ;; SCSS Mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
@@ -251,10 +251,10 @@
 
 ;; Custom Variables (Auto-Generated)
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
  '(js2-cleanup-whitespace t)
