@@ -302,3 +302,7 @@
 (add-to-list 'load-path "~/.emacs.d/packages/find-file-in-project")
 (require 'find-file-in-project)
 (global-set-key (kbd "C-c f") 'find-file-in-project)
+
+(add-to-list 'load-path "~/.emacs.d/packages/expand-region")
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
