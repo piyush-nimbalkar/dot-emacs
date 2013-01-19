@@ -44,10 +44,8 @@
       ido-everywhere t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
-      ido-max-prospects 20)
-
-;; Display ido results vertically, rather than horizontally
-(setq ido-decorations (quote ("\n-> " "\n" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+      ido-max-prospects 8
+      confirm-nonexistent-file-or-buffer nil)
 
 ;; IdoMenu - Easy toggling between functions of a file
 (add-to-list 'load-path "~/.emacs.d/packages/idomenu")
