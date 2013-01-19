@@ -53,7 +53,8 @@
 (defvar wombat-purple "#cc99cc")
 (defvar wombat-pink-1 "#f283b6")
 (defvar wombat-pink "#F6B3DF")
-(defvar wombat-gray-3 "#181818")
+(defvar wombat-gray-4 "#181818")
+(defvar wombat-gray-3 "#262626")
 (defvar wombat-gray-2 "#323232")
 (defvar wombat-gray-1 "#444444")
 (defvar wombat-gray "#424242")
@@ -110,7 +111,7 @@
      (highlight-changes-delete-face ((t (:foreground "red" :underline t))))
      (highlight-changes-face ((t (:foreground "red"))))
      (secondary-selection ((t (:background ,wombat-blue-1 :foreground "black" :bold t))))
-     (hl-line ((t (:background ,wombat-gray-3))))
+     (hl-line ((t (:background ,wombat-gray-4))))
 
 
      ;; Org-mode
