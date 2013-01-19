@@ -223,17 +223,17 @@
 (require 'anything-config)
 
 ;; Configuring anything mode
-(global-set-key (kbd "C-x b")
-                (lambda() (interactive)
-                  (anything
-                   :prompt "Switch to: "
-                   :candidate-number-limit 10                 ;; up to 10 of each
-                   :sources
-                   '( anything-c-source-buffers               ;; buffers
-                      anything-c-source-recentf               ;; recent files
-                      anything-c-source-bookmarks             ;; bookmarks
-                      anything-c-source-files-in-current-dir+ ;; current dir
-                      anything-c-source-locate))))            ;; use 'locate'
+;; (global-set-key (kbd "C-x b")
+;;                 (lambda() (interactive)
+;;                   (anything
+;;                    :prompt "Switch to: "
+;;                    :candidate-number-limit 10                 ;; up to 10 of each
+;;                    :sources
+;;                    '( anything-c-source-buffers               ;; buffers
+;;                       anything-c-source-recentf               ;; recent files
+;;                       anything-c-source-bookmarks             ;; bookmarks
+;;                       anything-c-source-files-in-current-dir+ ;; current dir
+;;                       anything-c-source-locate))))            ;; use 'locate'
 
 ;; SCSS Mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
