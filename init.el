@@ -298,3 +298,7 @@
 (golden-ratio-enable)
 
 (server-start)
+
+(add-to-list 'load-path "~/.emacs.d/packages/find-file-in-project")
+(require 'find-file-in-project)
+(global-set-key (kbd "C-c f") 'find-file-in-project)
