@@ -35,7 +35,7 @@
 (require 'color-theme)
 
 (defvar wombat-fg "#f6f3e8")
-(defvar wombat-bg "black") ; original : #242424
+(defvar wombat-bg "#141414") ; original : #242424
 (defvar wombat-green "green") ; original : #95e454
 (defvar wombat-green+1 "#cae682")
 (defvar wombat-green+2 "#4BC98A")
@@ -97,7 +97,7 @@
      ;; (border ((t (:background ,wombat-red))))
      (fringe ((t (:background ,wombat-bg))))
      (minibuffer-prompt ((t (:foreground ,wombat-red :bold t))))
-     (mode-line ((t (:background ,wombat-gray-3 :foreground "#f6f3e8"))))
+     (mode-line ((t (:background ,wombat-gray-3 :foreground "#f6f3e8")))) ;#f6f3e8
      (mode-line-emphasis ((t (:bold t))))
      (mode-line-highlight ((t (:background ,wombat-orange :box nil))))
      (mode-line-inactive ((t (:background ,wombat-bg :box (:line-width 1 :color ,wombat-gray :style nil)))))
