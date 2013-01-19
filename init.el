@@ -246,7 +246,7 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; Scale the font-size
-(global-set-key [(C =)] 'text-scale-increase)
+(global-set-key [(C +)] 'text-scale-increase)
 (global-set-key [(C -)] 'text-scale-decrease)
 
 ;; Custom Variables (Auto-Generated)
