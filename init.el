@@ -173,7 +173,7 @@
         (end (save-excursion (forward-paragraph) (point))))
     (copy-region-as-kill beg end)
     (yank)))
-(global-set-key "\C-cf" 'duplicate-paragraph)
+(global-set-key "\C-cr" 'duplicate-paragraph)
 
 ;; Move lines up and down
 (defun move-text-internal (arg)
