@@ -26,6 +26,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(display-battery-mode 1)
 
 ;; Changing keybindings for Mac
 (setq mac-command-modifier 'meta)
@@ -96,7 +97,7 @@
 (global-set-key (kbd "C-c C-c") 'comment-region)
 
 ;; Displays given message in scratch by default
-(setq initial-scratch-message ";; Scratch Buffer [Emacs @ Elixir]\n\n\n")
+(setq initial-scratch-message ";; Scratch Buffer [Emacs @ Elixir]\n\n\n\n\n\n\n\n\n\n")
 
 ;; Display Persitent Time, Day and Date
 (setq display-time-day-and-date t) (display-time)
