@@ -301,7 +301,12 @@
 ;; Find Files In Project
 (add-to-list 'load-path "~/.emacs.d/packages/find-file-in-project")
 (require 'find-file-in-project)
+(set 'ffip-find-options "-not -regex \".*vendor.*\"")
+(set 'ffip-patterns '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
+                      "*.sh" "*.erl" "*.hs" "*.ml" "*.rabl" "Gemfile*" "*.erb" "*.haml" "*.yml"
+                      "*.yaml" "*.json" "Rakefile" "*.rake" "*.pp" "*.conf"))
 (global-set-key (kbd "C-x f") 'find-file-in-project)
+(global-set-key (kbd "M-N") 'find-file-in-project)
 
 ;; Expand Region Mode
 (add-to-list 'load-path "~/.emacs.d/packages/expand-region")
