@@ -320,3 +320,8 @@
 (add-to-list 'load-path "~/.emacs.d/packages/org-mode-crate")
 (setq org-directory "~/Dropbox/Notes")
 (require 'org-mode-crate-init)
+
+;; Puppet Mode
+(add-to-list 'load-path "~/.emacs.d/elpa/puppet-mode-0.2")
+(require 'puppet-mode)
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
