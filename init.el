@@ -59,6 +59,13 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
 (ac-config-default)
 
+;; Overriding the <tab> key for auto-complete and yassnippet mode
+(defun ac-and-yas-tab-noconflict ()
+  (let ((command (key-binding [tab])))
+    (local-unset-key [tab])
+    (local-set-key (kbd "TAB") command)))
+(add-hook 'ruby-mode-hook 'ac-and-yas-tab-noconflict)
+
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
@@ -255,6 +262,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-modes (quote (emacs-lisp-mode lisp-mode lisp-interaction-mode slime-repl-mode c-mode cc-mode c++-mode java-mode malabar-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode haskell-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode ts-mode puppet-mode org-mode)))
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
  '(js2-cleanup-whitespace t)
@@ -275,6 +283,7 @@
 (setq yas/snippet-dirs "~/.emacs.d/packages/yasnippet/snippets")
 (yas/initialize)
 (yas/global-mode 1)
+(global-set-key [s-tab] 'yas/expand)
 
 ;; Dropdown List for yasnipppet completions
 (require 'dropdown-list)
