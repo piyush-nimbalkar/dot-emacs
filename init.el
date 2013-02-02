@@ -97,11 +97,19 @@
 ;; Inserts 'TAB' character instead of spaces
 (setq-default indent-tabs-mode t)
 
-;; Uncomment Region
-(global-set-key (kbd "C-c C-v") 'uncomment-region)
+;; Smarter function to comment-uncomment lines or region
+(defun toggle-comment ()
+  (interactive)
+  (let (beg end)
+    (if (region-active-p)
+        (setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-or-uncomment-region beg end)
+    (next-line)))
 
-;; Comment Region
-(global-set-key (kbd "C-c C-c") 'comment-region)
+;; Toggle Comments of a Region or Line
+(global-set-key (kbd "M-?") 'toggle-comment)
+(global-set-key (kbd "C-c C-c") 'toggle-comment)
 
 ;; Displays given message in scratch by default
 (setq initial-scratch-message ";; Scratch Buffer [Emacs @ Elixir]\n\n\n\n\n\n\n\n\n\n")
