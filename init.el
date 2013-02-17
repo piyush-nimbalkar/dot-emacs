@@ -337,3 +337,8 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/puppet-mode-0.2")
 (require 'puppet-mode)
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+
+;; Magit Mode
+(add-to-list 'load-path "~/.emacs.d/elpa/magit-1.2.0")
+(require 'magit)
+(global-set-key (kbd "C-c C-g") 'magit-status)
