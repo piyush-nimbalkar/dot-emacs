@@ -346,3 +346,10 @@
 ;; Paredit Mode
 (add-to-list 'load-path "~/.emacs.d/elpa/paredit-22")
 (require 'paredit)
+
+;; Copy Current Line
+(defun copy-line (arg)
+  (interactive "p")
+  (kill-ring-save (line-beginning-position)
+                  (line-beginning-position 1))
+(global-set-key "\C-c\C-k" 'copy-line)
