@@ -342,3 +342,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/magit-1.2.0")
 (require 'magit)
 (global-set-key (kbd "C-c C-g") 'magit-status)
+
+;; Paredit Mode
+(add-to-list 'load-path "~/.emacs.d/elpa/paredit-22")
+(require 'paredit)
