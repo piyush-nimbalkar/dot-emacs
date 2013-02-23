@@ -161,6 +161,12 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/rinari-2.10")
 (require 'rinari)
 
+;; Copy Current Line
+(defun copy-line (arg)
+  (interactive "p")
+  (kill-ring-save (line-beginning-position)
+                  (line-beginning-position (+ 1 arg))))
+(global-set-key (kbd "C-c C-k") 'copy-line)
 
 ;; Duplicate current line
 (defun duplicate-current-line ()
@@ -347,9 +353,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/paredit-22")
 (require 'paredit)
 
-;; Copy Current Line
-(defun copy-line (arg)
-  (interactive "p")
-  (kill-ring-save (line-beginning-position)
-                  (line-beginning-position 1))
-(global-set-key "\C-c\C-k" 'copy-line)
+;; Browse-Kill-Ring
+(add-to-list 'load-path "~/.emacs.d/packages/browse-kill-ring")
+(require 'browse-kill-ring)
+(global-set-key (kbd "C-M-y") 'browse-kill-ring)
