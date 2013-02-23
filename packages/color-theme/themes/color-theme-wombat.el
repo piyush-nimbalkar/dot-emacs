@@ -107,7 +107,7 @@
 
      ;; Highlighting
      (lazy-highlight ((t (:italic t :background "yellow" :foreground "black"))))
-     (highlight ((t (:background ,wombat-gray-1))))
+     (highlight ((t (:background ,wombat-bg))))
      (highlight-changes-delete-face ((t (:foreground "red" :underline t))))
      (highlight-changes-face ((t (:foreground "red"))))
      (secondary-selection ((t (:background ,wombat-blue-1 :foreground "black" :bold t))))
@@ -183,13 +183,13 @@
      (eshell-ls-symlink-face ((t (:foreground ,"#93e0e3" :bold t :weight bold))))
 
      ;; Diff mode
-     (diff-header ((t (:background "#464646"))))
-     (diff-index ((t (:bold t :weight bold))))
-     (diff-file-header ((t (:bold t :weight bold))))
-     (diff-hunk-header ((t (:background "#464646"))))
+     (diff-header ((t (:foreground "cyan"))))
+     (diff-index ((t (:foreground ,wombat-orange :bold t :weight bold))))
+     (diff-file-header ((t (:bold t :weight bold :foreground "cyan"))))
+     (diff-hunk-header ((t (:foreground "cyan" :bold t))))
 
-     (diff-added ((t (:foreground "#dfdfbf" :bold t :weight bold))))
-     (diff-removed ((t (:foreground "#8cd0d3"))))
-     (diff-context ((t (:inherit font-lock-comment-face)))))))
+     (diff-added ((t (:foreground "green3" :bold t :weight bold))))
+     (diff-removed ((t (:foreground "red2" :bold t))))
+     (diff-context ((t (:inherit font-lock-comment-face :foreground ,wombat-gray)))))))
 
 (provide 'color-theme-wombat)
