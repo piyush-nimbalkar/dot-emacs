@@ -29,8 +29,8 @@
 (display-battery-mode 1)
 
 ;; Changing keybindings for Mac
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
+;; (setq mac-command-modifier 'meta)
+;; (setq mac-option-modifier 'super)
 
 ;; Toggle fullscreen
 (defun toggle-fullscreen()
@@ -301,9 +301,9 @@
 (require 'zencoding-trie)
 
 ;; No Easy Keys
-(add-to-list 'load-path "~/.emacs.d/packages/no-easy-keys")
-(require 'no-easy-keys)
-(no-easy-keys 1)
+;; (add-to-list 'load-path "~/.emacs.d/packages/no-easy-keys")
+;; (require 'no-easy-keys)
+;; (no-easy-keys 1)
 
 ;; Golden Ratio
 (add-to-list 'load-path "~/.emacs.d/packages/golden-ratio")
@@ -323,9 +323,9 @@
 (global-set-key (kbd "M-N") 'find-file-in-project)
 
 ;; Expand Region Mode
-(add-to-list 'load-path "~/.emacs.d/packages/expand-region")
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+;; (add-to-list 'load-path "~/.emacs.d/packages/expand-region")
+;; (require 'expand-region)
+;; (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; Smex
 (add-to-list 'load-path "~/.emacs.d/packages/smex")
@@ -357,3 +357,6 @@
 (add-to-list 'load-path "~/.emacs.d/packages/browse-kill-ring")
 (require 'browse-kill-ring)
 (global-set-key (kbd "C-M-y") 'browse-kill-ring)
+
+
+(global-set-key (kbd "C-c t") 'org-set-tags)

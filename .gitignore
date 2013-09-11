@@ -4,3 +4,5 @@ auto-save-list
 elpa/archives
 bookmarks
 url
+session*
+eshell/

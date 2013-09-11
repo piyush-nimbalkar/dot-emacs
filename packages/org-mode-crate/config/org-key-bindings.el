@@ -21,8 +21,8 @@
 (global-set-key (kbd "C-c C-r") 'org-capture)
 (global-set-key (kbd "<f6>") 'org-capture)
 (global-set-key (kbd "<S-f5>") 'widen)
-(global-set-key (kbd "<f11>") 'org-clock-goto)
-(global-set-key (kbd "C-<f11>") 'org-clock-in)
+(global-set-key (kbd "<f5>") 'org-clock-goto)
+(global-set-key (kbd "C-<f5>") 'org-clock-in)
 
 
 (provide 'org-key-bindings)
