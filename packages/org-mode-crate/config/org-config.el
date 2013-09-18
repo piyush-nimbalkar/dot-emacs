@@ -74,29 +74,15 @@
 ;; @ indicates insert note
 ;; / indicates entering the state
 (setq org-todo-keywords
-      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "IN-REVIEW(i!/!)"
-                  "REDO(R@/!)" "WAITING(a@/!)"
-                  "|" "DONE(d!/@)" "DELEGATED(e@/!)")
-        (sequence "PROJECT(p)" "BUG(b!/@)" "FEATURE(f!/!)" "MAINT(m!/!)"
-                  "|" "SOMEDAY(s)" "CANCELLED(c@/!)"
-                  "RESTRUCTURED(r@/!)")))
+      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "WAITING(a@/!)" "|" "DONE(d!/@)" "|" "SOMEDAY(s!/@)")))
 
 
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "red" :weight bold)
         ("WORKING" :foreground "orange" :weight bold)
-        ("IN-REVIEW" :foreground "orange" :weight bold)
         ("WAITING" :foreground "lightblue" :weight bold)
-        ("REDO" :foreground "magenta" :weight bold)
-        ("DONE" :foreground "lightgreen" :weight bold)
-        ("DELEGATED" :foreground "lightgreen" :weight bold)
-        ("PROJECT" :foreground "lightblue" :weight bold)
-        ("BUG" :foreground "red" :weight bold)
-        ("FEATURE" :foreground "red" :weight bold)
-        ("MAINT" :foreground "red" :weight bold)
         ("SOMEDAY" :foreground "magenta" :weight bold)
-        ("CANCELLED" :foreground "lightgreen" :weight bold)
-        ("RESTRUCTURED" :foreground "lightgreen" :weight bold)))
+        ("DONE" :foreground "lightgreen" :weight bold)))
 
 
 ;; Changing State should trigger following Tag changes
@@ -150,18 +136,14 @@
 ;;org-tags
 ;; Important Tag list
 (setq org-tag-alist '(("next" . ?x)
-                      ("release" . ?r)
                       ("note" . ?N)
                       ("study" . ?s)
                       ("goal" . ?g)
-                      ("dp" . ?d)
                       ("tweak" . ?t)
                       ("write" . ?w)
-                      ("productive" . ?p)
                       ("essential" . ?e)
-                      ("nonessential" . ?n)
                       ("waiting" . ?a)
-                      ("future" . ?f)))
+                      ("fun" . ?f)))
 
 
 ;; org-priorities
@@ -191,7 +173,7 @@
 
 
 ;; List of TODO states to clock-in
-(setq vm/todo-list '("TODO" "FEATURE" "BUG" "MAINT" "WAITING"))
+(setq vm/todo-list '("TODO" "WAITING"))
 
 
 (defun bh/hide-other ()
@@ -341,7 +323,7 @@ as the default task."
                             (org-tags-match-list-sublevels t)
                             (org-agenda-sorting-strategy
                              '(effort-up category-keep))))
-                (tags-todo "productive|future|fun"
+                (tags-todo "fun"
                            ((org-agenda-overriding-header
                              "Other Fun Tasks")
                             (org-agenda-todo-ignore-scheduled t)
