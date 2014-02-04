@@ -269,7 +269,8 @@
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
  '(js2-cleanup-whitespace t)
- '(js2-indent-on-enter-key t))
+ '(js2-indent-on-enter-key t)
+ '(user-mail-address "piyushmnimbalkar@gmail.com"))
 
 ;; Js2 Mode
 (autoload 'js2-mode "js2" nil t)
