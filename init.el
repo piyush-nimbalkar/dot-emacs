@@ -86,7 +86,7 @@
 (global-set-key (kbd "C-z") 'undo)
 
 ;; Default tab width for C
-(setq-default c-basic-offset 8)
+(setq-default c-basic-offset 4)
 
 ;; Default tab width
 (setq-default tab-width 2)
