@@ -339,6 +339,7 @@
 (add-to-list 'load-path "~/.emacs.d/packages/org-mode-crate")
 (setq org-directory "~/Dropbox/Notes")
 (require 'org-mode-crate-init)
+(global-set-key (kbd "C-c t") 'org-set-tags)
 
 ;; Puppet Mode
 (add-to-list 'load-path "~/.emacs.d/elpa/puppet-mode-0.2")
@@ -359,10 +360,6 @@
 (require 'browse-kill-ring)
 (global-set-key (kbd "C-M-y") 'browse-kill-ring)
 
-
-(global-set-key (kbd "C-c t") 'org-set-tags)
-
-
 ;; Erlang Mode
 (setq load-path (cons  "/opt/otp_src_R16B/lib/tools/emacs"
                        load-path))
@@ -375,3 +372,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Prettify JSON
+(defun json-format ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
