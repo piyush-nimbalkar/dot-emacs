@@ -341,6 +341,10 @@
 (require 'org-mode-crate-init)
 (global-set-key (kbd "C-c t") 'org-set-tags)
 
+(add-hook 'org-mode-hook
+          '(lambda ()
+             (define-key org-mode-map [(control tab)] nil)))
+
 ;; Puppet Mode
 (add-to-list 'load-path "~/.emacs.d/elpa/puppet-mode-0.2")
 (require 'puppet-mode)
