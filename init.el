@@ -385,3 +385,15 @@
   (interactive)
   (save-excursion
     (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
+
+;; Open recent files
+;; (require 'recentf)
+;; (recentf-mode 1)
+;; (setq recentf-max-menu-items 25)
+;; (global-set-key (kbd "C-x f") 'recentf-open-files)
+
+;; Slime support
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(add-to-list 'load-path "/usr/share/emacs23/site-lisp/slime/")
+(require 'slime)
+(slime-setup '(slime-fancy))
