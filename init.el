@@ -150,8 +150,11 @@
 
 ;; Emacs Package Repositories
 (package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives
+             ;; '("marmalade" . "http://marmalade-repo.org/packages/"))
+
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Cucumber
 (add-to-list 'load-path "~/.emacs.d/packages/cucumber")
