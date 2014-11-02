@@ -394,6 +394,6 @@
 
 ;; Slime support
 (setq inferior-lisp-program "/usr/bin/sbcl")
-(add-to-list 'load-path "/usr/share/emacs23/site-lisp/slime/")
+(add-to-list 'load-path "~/.emacs.d/packages/slime/")
 (require 'slime)
 (slime-setup '(slime-fancy))
