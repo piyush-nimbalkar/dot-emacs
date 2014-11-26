@@ -36,7 +36,7 @@
 
 (defvar wombat-fg "#f6f3e8")
 (defvar wombat-bg "#141414") ; original : #242424
-(defvar wombat-green "green") ; original : #95e454
+(defvar wombat-green "#13D620") ; original : #95e454
 (defvar wombat-green+1 "#cae682")
 (defvar wombat-green+2 "#4BC98A")
 (defvar wombat-red-1 "#e5786d")
