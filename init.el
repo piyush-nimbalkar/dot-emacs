@@ -94,6 +94,9 @@
 ;; Fontsize := 10
 ;; (set-face-attribute 'default nil :height 110)
 
+;; Increasing the line spacing
+(setq-default line-spacing 1)
+
 ;; Inserts 'TAB' character instead of spaces
 (setq-default indent-tabs-mode t)
 

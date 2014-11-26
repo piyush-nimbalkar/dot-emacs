@@ -64,7 +64,7 @@
   "The wombat color theme for Emacs."
   (interactive)
   ;; set font
-  (set-frame-parameter frame 'font "Monospace-10.5")
+  (set-frame-parameter frame 'font "Ubuntu Mono-14")
   (color-theme-install
    `(color-theme-wombat
      ((background-color . ,wombat-bg)
