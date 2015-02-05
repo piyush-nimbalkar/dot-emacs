@@ -400,3 +400,6 @@
 (add-to-list 'load-path "~/.emacs.d/packages/slime/")
 (require 'slime)
 (slime-setup '(slime-fancy))
+
+;; Initiate the autopair mode globally
+(autopair-global-mode)
