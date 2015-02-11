@@ -127,6 +127,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Enable Linum Mode globally
+(setq linum-format "%3d ")
 (global-linum-mode 1)
 
 ;; Show Parenthesis
@@ -403,3 +404,10 @@
 
 ;; Initiate the autopair mode globally
 (autopair-global-mode)
+
+;; Avoid scroll-jumping because it's really irritating
+(setq scroll-step 1)
+(setq scroll-conservatively 10000)
+
+;; Activate the highlight current line mode by default
+(global-hl-line-mode 1)

@@ -111,7 +111,7 @@
      (highlight-changes-delete-face ((t (:foreground "red" :underline t))))
      (highlight-changes-face ((t (:foreground "red"))))
      (secondary-selection ((t (:background ,wombat-blue-1 :foreground "black" :bold t))))
-     (hl-line ((t (:background ,wombat-gray-4))))
+     (hl-line ((t (:background ,wombat-gray-3))))
 
 
      ;; Org-mode
