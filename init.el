@@ -408,6 +408,8 @@
 ;; Avoid scroll-jumping because it's really irritating
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
 
 ;; Activate the highlight current line mode by default
 (global-hl-line-mode 1)
