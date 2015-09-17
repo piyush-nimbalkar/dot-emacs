@@ -9,15 +9,18 @@
 (require 'cl)
 
 ;; Initialize Color Theme
-(add-to-list 'load-path "~/.emacs.d/packages/color-theme")
-(require 'color-theme)
-(eval-after-load "color-theme" '(progn (color-theme-initialize)))
+;; (add-to-list 'load-path "~/.emacs.d/packages/color-theme")
+;; (require 'color-theme)
+;; (eval-after-load "color-theme" '(progn (color-theme-initialize)))
 
 ;; Select Color Theme Wombat
-(require 'color-theme-wombat)
-(if window-system
-    (color-theme-wombat))
-(add-hook 'after-make-frame-functions 'color-theme-wombat)
+;; (require 'color-theme-wombat)
+;; (if window-system
+;; (color-theme-wombat))
+;; (add-hook 'after-make-frame-functions 'color-theme-wombat)
+(add-to-list 'load-path "~/.emacs.d/elpa/darcula-theme-20150629.235")
+(require 'darcula-theme)
+(set-frame-font "Inconsolata-14")
 
 ;; Disabling the startup screen
 (setq inhibit-startup-message t)
@@ -29,8 +32,8 @@
 (display-battery-mode 1)
 
 ;; Changing keybindings for Mac
-;; (setq mac-command-modifier 'meta)
-;; (setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
 
 ;; Toggle fullscreen
 (defun toggle-fullscreen()
@@ -95,7 +98,7 @@
 ;; (set-face-attribute 'default nil :height 110)
 
 ;; Increasing the line spacing
-(setq-default line-spacing 1)
+(setq-default line-spacing 3)
 
 ;; Inserts 'TAB' character instead of spaces
 (setq-default indent-tabs-mode t)
@@ -127,7 +130,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Enable Linum Mode globally
-(setq linum-format "%3d ")
+(setq linum-format "%3d |")
 (global-linum-mode 1)
 
 ;; Show Parenthesis
@@ -161,12 +164,12 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Cucumber
-(add-to-list 'load-path "~/.emacs.d/packages/cucumber")
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+;; (add-to-list 'load-path "~/.emacs.d/packages/cucumber")
+;; (require 'feature-mode)
+;; (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
-(add-to-list 'load-path "~/.emacs.d/elpa/rinari-2.10")
-(require 'rinari)
+;; (add-to-list 'load-path "~/.emacs.d/elpa/rinari-2.10")
+;; (require 'rinari)
 
 ;; Copy Current Line
 (defun copy-line (arg)
@@ -326,7 +329,7 @@
 (set 'ffip-find-options "-not -regex \".*vendor.*\"")
 (set 'ffip-patterns '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
                       "*.sh" "*.erl" "*.hs" "*.ml" "*.rabl" "Gemfile*" "*.erb" "*.haml" "*.yml"
-                      "*.yaml" "*.json" "Rakefile" "*.rake" "*.pp" "*.conf" "*.sql"))
+                      "*.yaml" "*.json" "Rakefile" "*.rake" "*.pp" "*.conf" "*.sql" "*.java"))
 (global-set-key (kbd "C-x f") 'find-file-in-project)
 (global-set-key (kbd "M-N") 'find-file-in-project)
 
@@ -343,10 +346,10 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; Org Mode
-(add-to-list 'load-path "~/.emacs.d/packages/org-mode-crate")
-(setq org-directory "~/Dropbox/Notes")
-(require 'org-mode-crate-init)
-(global-set-key (kbd "C-c t") 'org-set-tags)
+;; (add-to-list 'load-path "~/.emacs.d/packages/org-mode-crate")
+;; (setq org-directory "~/Dropbox/Notes")
+;; (require 'org-mode-crate-init)
+;; (global-set-key (kbd "C-c t") 'org-set-tags)
 
 (add-hook 'org-mode-hook
           '(lambda ()
@@ -413,3 +416,12 @@
 
 ;; Activate the highlight current line mode by default
 (global-hl-line-mode 1)
+
+;; Protobuf Mode
+(add-to-list 'load-path "~/.emacs.d/packages/protobuf")
+(require 'protobuf-mode)
+(defun proto-mode-hook ()
+  (when (and (stringp buffer-file-name)
+             (string-match "\\.proto\\'" buffer-file-name))
+    (protobuf-mode)))
+(add-hook 'find-file-hook 'proto-mode-hook)
