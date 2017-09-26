@@ -20,7 +20,7 @@
 ;; (add-hook 'after-make-frame-functions 'color-theme-wombat)
 (add-to-list 'load-path "~/.emacs.d/elpa/darcula-theme-20150629.235")
 (require 'darcula-theme)
-(set-frame-font "Inconsolata-14")
+;; (set-frame-font "Inconsolata-14")
 
 ;; Disabling the startup screen
 (setq inhibit-startup-message t)
@@ -71,9 +71,6 @@
 
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
-
-;; Scroll one line at a time
-(setq scroll-step 1)
 
 ;; Show line and column numbers on minibuffer
 (line-number-mode 1)
@@ -261,9 +258,9 @@
 ;;                       anything-c-source-locate))))            ;; use 'locate'
 
 ;; SCSS Mode
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
+;; (autoload 'scss-mode "scss-mode")
+;; (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; Scale the font-size
 (global-set-key [(C +)] 'text-scale-increase)
@@ -321,18 +318,6 @@
 (require 'golden-ratio)
 (golden-ratio-enable)
 
-(server-start)
-
-;; Find Files In Project
-(add-to-list 'load-path "~/.emacs.d/packages/find-file-in-project")
-(require 'find-file-in-project)
-(set 'ffip-find-options "-not -regex \".*vendor.*\"")
-(set 'ffip-patterns '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
-                      "*.sh" "*.erl" "*.hs" "*.ml" "*.rabl" "Gemfile*" "*.erb" "*.haml" "*.yml"
-                      "*.yaml" "*.json" "Rakefile" "*.rake" "*.pp" "*.conf" "*.sql" "*.java"))
-(global-set-key (kbd "C-x f") 'find-file-in-project)
-(global-set-key (kbd "M-N") 'find-file-in-project)
-
 ;; Expand Region Mode
 (add-to-list 'load-path "~/.emacs.d/packages/expand-region")
 (require 'expand-region)
@@ -361,9 +346,9 @@
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 ;; Magit Mode
-(add-to-list 'load-path "~/.emacs.d/elpa/magit-1.2.0")
-(require 'magit)
-(global-set-key (kbd "C-c C-g") 'magit-status)
+;; (add-to-list 'load-path "~/.emacs.d/elpa/magit-1.2.0")
+;; (require 'magit)
+;; (global-set-key (kbd "C-c C-g") 'magit-status)
 
 ;; Paredit Mode
 (add-to-list 'load-path "~/.emacs.d/elpa/paredit-22")
@@ -425,3 +410,45 @@
              (string-match "\\.proto\\'" buffer-file-name))
     (protobuf-mode)))
 (add-hook 'find-file-hook 'proto-mode-hook)
+
+;; Golang Mode
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
+
+(defun my-go-mode-hook ()
+  (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
+  (setq gofmt-command "goimports")                ; gofmt invokes goimports
+  (if (not (string-match "go" compile-command))   ; set compile command default
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+
+  (go-guru-hl-identifier-mode)                    ; highlight identifiers
+
+  (local-set-key (kbd "M-.") 'godef-jump)         ; Go to definition
+  (local-set-key (kbd "M-*") 'pop-tag-mark)       ; Return from whence you came
+  (local-set-key (kbd "M-p") 'compile)            ; Invoke compiler
+  (local-set-key (kbd "M-P") 'recompile)          ; Redo most recent compile cmd
+  (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
+  (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
+
+  (auto-complete-mode 1))                         ; Enable auto-complete mode
+
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+(with-eval-after-load 'go-mode
+  (require 'go-autocomplete))
+
+(add-to-list 'load-path "~/.emacs.d/packages/go-guru")
+(require 'go-guru)
+
+;; Projectile Mode
+(projectile-mode)
+(defun my-switch-project-hook ()
+  (go-set-project))
+(add-hook 'projectile-after-switch-project-hook 'my-switch-project-hook)
+
+(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "M-N") 'projectile-find-file)
+
+(server-start)
