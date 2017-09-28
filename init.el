@@ -8,6 +8,11 @@
 
 (require 'cl)
 
+;; Emacs Package Repositories
+(package-initialize)
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 ;; Initialize Color Theme
 ;; (add-to-list 'load-path "~/.emacs.d/packages/color-theme")
 ;; (require 'color-theme)
@@ -42,8 +47,10 @@
 (global-set-key [f11] 'toggle-fullscreen)
 
 ;; Enable Ido Mode with some attributes
-(ido-mode t)
-(ido-vertical-mode t)
+(ido-mode 1)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
+
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-everywhere t
@@ -51,12 +58,6 @@
       ido-use-filename-at-point 'guess
       ido-max-prospects 5
       confirm-nonexistent-file-or-buffer nil)
-
-(defun ido-define-keys()
-  (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
-  (define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
-(add-hook 'ido-setup-hook 'ido-define-keys)
-
 
 ;; IdoMenu - Easy toggling between functions of a file
 (add-to-list 'load-path "~/.emacs.d/packages/idomenu")
