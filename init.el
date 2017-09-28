@@ -95,7 +95,7 @@
 ;; (set-face-attribute 'default nil :height 110)
 
 ;; Increasing the line spacing
-(setq-default line-spacing 3)
+(setq-default line-spacing 5)
 
 ;; Inserts 'TAB' character instead of spaces
 (setq-default indent-tabs-mode t)
@@ -111,7 +111,7 @@
     (next-line)))
 
 ;; Toggle Comments of a Region or Line
-(global-set-key (kbd "M-?") 'toggle-comment)
+(global-set-key (kbd "M-/") 'toggle-comment)
 (global-set-key (kbd "C-c C-c") 'toggle-comment)
 
 ;; Displays given message in scratch by default
@@ -141,7 +141,9 @@
 
 ;; Switch Buffers
 (global-set-key [s-right] 'next-buffer)
+(global-set-key [M-right] 'next-buffer)
 (global-set-key [s-left] 'previous-buffer)
+(global-set-key [M-left] 'previous-buffer)
 
 ;; Switch Frames
 (global-set-key [C-tab] 'next-multiframe-window)
