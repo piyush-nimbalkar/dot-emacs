@@ -74,7 +74,7 @@
  'darcula
  '(default ((t (:inherit nil :stipple nil :background "#2B2B2B" :foreground "#a9b7c6"
                          :inverse-video nil :box nil :strike-through nil :overline nil
-                         :underline nil :slant normal :weight light :height 120
+                         :underline nil :slant normal :weight normal :height 120
                          :width normal :foundry nil))))
  '(cursor ((t (:foreground "#042028" :background "#708183"))))
  '(error ((t (:inherit 'default :underline (:style wave :color "red")))))
