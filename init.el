@@ -69,13 +69,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
 (ac-config-default)
 
-;; Overriding the <tab> key for auto-complete and yassnippet mode
-(defun ac-and-yas-tab-noconflict ()
-  (let ((command (key-binding [tab])))
-    (local-unset-key [tab])
-    (local-set-key (kbd "TAB") command)))
-(add-hook 'ruby-mode-hook 'ac-and-yas-tab-noconflict)
-
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
@@ -161,19 +154,8 @@
 
 ;; Emacs Package Repositories
 (package-initialize)
-;; (add-to-list 'package-archives
-             ;; '("marmalade" . "http://marmalade-repo.org/packages/"))
-
 (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
-
-;; Cucumber
-;; (add-to-list 'load-path "~/.emacs.d/packages/cucumber")
-;; (require 'feature-mode)
-;; (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
-;; (add-to-list 'load-path "~/.emacs.d/elpa/rinari-2.10")
-;; (require 'rinari)
 
 ;; Copy Current Line
 (defun copy-line (arg)
@@ -264,11 +246,6 @@
 ;;                       anything-c-source-files-in-current-dir+ ;; current dir
 ;;                       anything-c-source-locate))))            ;; use 'locate'
 
-;; SCSS Mode
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/scss-mode"))
-;; (autoload 'scss-mode "scss-mode")
-;; (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-
 ;; Scale the font-size
 (global-set-key [(C +)] 'text-scale-increase)
 (global-set-key [(C -)] 'text-scale-decrease)
@@ -315,15 +292,10 @@
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
 (require 'zencoding-trie)
 
-;; No Easy Keys
-;; (add-to-list 'load-path "~/.emacs.d/packages/no-easy-keys")
-;; (require 'no-easy-keys)
-;; (no-easy-keys 1)
-
 ;; Golden Ratio
-(add-to-list 'load-path "~/.emacs.d/packages/golden-ratio")
-(require 'golden-ratio)
-(golden-ratio-enable)
+;; (add-to-list 'load-path "~/.emacs.d/packages/golden-ratio")
+;; (require 'golden-ratio)
+;; (golden-ratio-enable)
 
 ;; Expand Region Mode
 (add-to-list 'load-path "~/.emacs.d/packages/expand-region")
@@ -347,11 +319,6 @@
           '(lambda ()
              (define-key org-mode-map [(control tab)] nil)))
 
-;; Puppet Mode
-(add-to-list 'load-path "~/.emacs.d/elpa/puppet-mode-0.2")
-(require 'puppet-mode)
-(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
-
 ;; Magit Mode
 ;; (add-to-list 'load-path "~/.emacs.d/elpa/magit-1.2.0")
 ;; (require 'magit)
@@ -366,30 +333,11 @@
 (require 'browse-kill-ring)
 (global-set-key (kbd "C-M-y") 'browse-kill-ring)
 
-;; Erlang Mode
-;; (setq load-path (cons  "/opt/otp_src_R16B/lib/tools/emacs"
-                       ;; load-path))
-;; (setq erlang-root-dir "/opt/otp_src_R16B")
-;; (setq exec-path (cons "/opt/otp_src_R16B/bin" exec-path))
-;; (require 'erlang-start)
-;; (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;; )
-
 ;; Prettify JSON
 (defun json-format ()
   (interactive)
   (save-excursion
     (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
-
-;; Open recent files
-;; (require 'recentf)
-;; (recentf-mode 1)
-;; (setq recentf-max-menu-items 25)
-;; (global-set-key (kbd "C-x f") 'recentf-open-files)
 
 ;; Slime support
 (setq inferior-lisp-program "/usr/bin/sbcl")
