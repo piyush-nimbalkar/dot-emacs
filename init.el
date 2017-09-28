@@ -32,8 +32,8 @@
 (display-battery-mode 1)
 
 ;; Changing keybindings for Mac
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
+;; (setq mac-command-modifier 'meta)
+;; (setq mac-option-modifier 'super)
 
 ;; Toggle fullscreen
 (defun toggle-fullscreen()
