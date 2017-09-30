@@ -101,6 +101,9 @@
 ;; Inserts 'TAB' character instead of spaces
 (setq-default indent-tabs-mode t)
 
+;; Confirm before exiting Emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; Smarter function to comment-uncomment lines or region
 (defun toggle-comment ()
   (interactive)
@@ -259,7 +262,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ac-modes (quote (emacs-lisp-mode lisp-mode lisp-interaction-mode slime-repl-mode c-mode cc-mode c++-mode java-mode malabar-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode haskell-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode ts-mode puppet-mode org-mode)))
+ '(ac-modes
+   (quote
+    (emacs-lisp-mode lisp-mode lisp-interaction-mode slime-repl-mode c-mode cc-mode c++-mode java-mode malabar-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode haskell-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode ts-mode puppet-mode org-mode)))
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
  '(js2-cleanup-whitespace t)

@@ -72,7 +72,7 @@
 
 (custom-theme-set-faces
  'darcula
- '(default ((t (:inherit nil :stipple nil :background "#2B2B2B" :foreground "#a9b7c6"
+ '(default ((t (:inherit nil :stipple nil :background "#222222" :foreground "#a9b7c6"
                          :inverse-video nil :box nil :strike-through nil :overline nil
                          :underline nil :slant normal :weight normal :height 120
                          :width normal :foundry nil))))
@@ -97,7 +97,7 @@
                                         ;for comments.
  '(font-lock-comment-delimiter-face ((t (:inherit 'font-lock-comment-face))))
                                         ;for comments delimiters, like ‘/*’ and ‘*/’ in C.
- '(font-lock-type-face ((t (:foreground "#4e807d" :inherit 'default))))
+ '(font-lock-type-face ((t (:foreground "#0e907d" :inherit 'default))))
                                         ;for the names of user-defined data types.
  '(font-lock-constant-face ((t (:foreground "#6897bb" :weight bold :inherit 'font-lock-variable-name-face))))
                                         ;for the names of constants, like ‘NULL’ in C.
@@ -115,7 +115,7 @@
  '(flymake-warnline ((t (:inherit 'warning))))
  '(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
  '(minibuffer-prompt ((t (:weight bold :slant normal :underline nil :inverse-video nil :foreground "#259185"))))
- '(highlight ((t (:background "#0a2832"))))
+ '(highlight ((t (:background "#303030"))))
  '(region ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#465a61" :background "#042028"))))
  '(shadow ((t (:foreground "#465a61"))))
  '(secondary-selection ((t (:background "#0a2832"))))
@@ -127,7 +127,7 @@
  '(header-line ((t (:weight normal :slant normal :underline nil :box nil :inverse-video t :foreground "#708183" :background "#0a2832" :inherit (mode-line)))))
  '(tooltip ((((class color)) (:foreground "black" :background "lightyellow"))))
  '(mode-line ((t (:weight normal :slant normal :underline nil :box nil :inverse-video t :foreground "#3c3f41" :background "#a9b7c6"))))
- '(mode-line-inactive ((t (:weight normal :slant normal :underline nil :box nil :inverse-video t :foreground "#3c3f41" :background "#313335" :inherit (mode-line)))))
+ '(mode-line-inactive ((t (:weight normal :slant normal :underline nil :box nil :inverse-video t :foreground "#3c3f41" :background "#0a0a0a" :inherit (mode-line)))))
  '(mode-line-buffer-id ((t (:weight bold))))
  '(mode-line-emphasis ((t (:weight bold))))
  '(mode-line-highlight ((((class color) (min-colors 88))) (t (:inherit (highlight)))))
@@ -150,8 +150,9 @@
  '(git-gutter:deleted ((t (:foreground "#cc7832"))))
  '(isearch ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#bd3612" :background "#042028"))))
  '(isearch-fail ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#bd3612" :background "#042028"))))
- '(linum ((t (:background "#2B2B2B" :foreground "#666666"))))
+ '(linum ((t (:inherit 'default :foreground "#666666"))))
  '(lazy-highlight ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#a57705" :background "#042028"))))
+ '(go-guru-hl-identifier-face ((t (:inherit 'default :background "#2f4f4f"))))
  '(compilation-info ((t (:weight bold :foreground "#a6c25c" :underline nil))))
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1"))
           (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3"))
