@@ -97,7 +97,7 @@
                                         ;for comments.
  '(font-lock-comment-delimiter-face ((t (:inherit 'font-lock-comment-face))))
                                         ;for comments delimiters, like ‘/*’ and ‘*/’ in C.
- '(font-lock-type-face ((t (:foreground "#0e907d" :inherit 'default))))
+ '(font-lock-type-face ((t (:foreground "#38907d" :inherit 'default))))
                                         ;for the names of user-defined data types.
  '(font-lock-constant-face ((t (:foreground "#6897bb" :weight bold :inherit 'font-lock-variable-name-face))))
                                         ;for the names of constants, like ‘NULL’ in C.
@@ -137,7 +137,7 @@
  '(popup-menu-summary-face ((t (:inherit 'mode-line :weight bold))))
  '(popup-summary-face ((t (:inherit 'mode-line :weight bold))))
  '(ac-candidate-face ((t (:inherit 'mode-line))))
- '(ac-selection-face ((t (:inherit 'highlight))))
+ '(ac-selection-face ((t (:inherit 'highlight :background "#00707d"))))
  '(company-tooltip ((t (:inherit 'mode-line))))
  '(company-scrollbar-bg ((t (:inherit 'mode-line-inactive))))
  '(company-scrollbar-fg ((t (:inherit 'tooltip))))
