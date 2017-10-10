@@ -230,9 +230,10 @@ output of the Go guru tool."
 	  (setq p (1- p)) ; exclude final space
 	  (let* ((posn (buffer-substring-no-properties start p))
 		 (flen (cl-search ":" posn)) ; length of filename
+     (line-num (substring posn flen (+ flen (cl-search "." (substring posn flen nil)))))
 		 (filename (if (< flen 19)
 			       (substring posn 0 flen)
-			     (concat "…" (substring posn (- flen 19) flen)))))
+			     (concat "…" (substring posn (- flen 19) flen) line-num ":"))))
 	    (put-text-property start p 'display filename)
 	    (forward-line 1)
 	    (setq start (point))))))))
