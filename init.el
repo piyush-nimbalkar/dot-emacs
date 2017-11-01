@@ -90,7 +90,7 @@
 (setq-default c-basic-offset 4)
 
 ;; Default tab width
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 
 ;; Fontsize := 10
 ;; (set-face-attribute 'default nil :height 110)
