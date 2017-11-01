@@ -138,6 +138,7 @@
  '(popup-summary-face ((t (:inherit 'mode-line :weight bold))))
  '(ac-candidate-face ((t (:inherit 'mode-line))))
  '(ac-selection-face ((t (:inherit 'highlight :background "#00707d"))))
+ '(show-paren-match ((t (:background "#00707d"))))
  '(company-tooltip ((t (:inherit 'mode-line))))
  '(company-scrollbar-bg ((t (:inherit 'mode-line-inactive))))
  '(company-scrollbar-fg ((t (:inherit 'tooltip))))
