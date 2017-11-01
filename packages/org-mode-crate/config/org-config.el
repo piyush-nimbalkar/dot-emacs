@@ -15,10 +15,6 @@
 ;;; Code:
 
 
-(require 'org-exp-blocks)
-(require 'org-latex)
-
-
 ;; Setup directory and file paths for org
 (setq org-archive-directory (concat org-directory "/archive")
       org-archive-location (concat org-archive-directory "/%s_archive::")

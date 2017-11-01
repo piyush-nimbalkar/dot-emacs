@@ -63,6 +63,7 @@
      (require 'org-key-bindings)
      (require 'org-config)))
 
+(org-agenda-restore-windows-after-quit t)
 
 (message "Press <f12> to get started with your agenda...")
 (provide 'org-mode-crate-init)

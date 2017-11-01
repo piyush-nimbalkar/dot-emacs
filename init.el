@@ -318,10 +318,10 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; Org Mode
-;; (add-to-list 'load-path "~/.emacs.d/packages/org-mode-crate")
-;; (setq org-directory "~/Dropbox/Notes")
-;; (require 'org-mode-crate-init)
-;; (global-set-key (kbd "C-c t") 'org-set-tags)
+(add-to-list 'load-path "~/.emacs.d/packages/org-mode-crate")
+(setq org-directory "~/Dropbox/Notes")
+(require 'org-mode-crate-init)
+(global-set-key (kbd "C-c t") 'org-set-tags)
 
 (add-hook 'org-mode-hook
           '(lambda ()
