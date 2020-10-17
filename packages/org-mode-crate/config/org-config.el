@@ -44,9 +44,12 @@
       '(("t" "todo" entry
          (file org-default-notes-file)
          "* TODO %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
+        ("d" "today" entry
+         (file org-default-notes-file)
+         "* TODO %?  :today:\n")
         ("n" "note" entry
          (file org-default-notes-file)
-         "* %?  :refile:note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+         "* %?  :refile:note:\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("l" "linklog" entry
          (file (concat org-directory "/linklog.org"))
          "* %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
@@ -116,17 +119,17 @@
       org-enforce-todo-dependencies t)
 
 
-(dolist (map (list org-agenda-keymap org-agenda-mode-map))
-  (define-prefix-command 'org-todo-state-map)
-  (define-key map "x" 'org-todo-state-map)
+;; (dolist (map (list org-agenda-keymap org-agenda-mode-map))
+  ;; (define-prefix-command 'org-todo-state-map)
+  ;; (define-key map "x" 'org-todo-state-map)
 
-  (define-key org-todo-state-map "d"
-    #'(lambda nil (interactive) (org-agenda-todo "DONE")))
-  (define-key org-todo-state-map "x"
-    #'(lambda nil (interactive) (org-agenda-todo "CANCELLED")))
+  ;; (define-key org-todo-state-map "d"
+    ;; #'(lambda nil (interactive) (org-agenda-todo "DONE")))
+  ;; (define-key org-todo-state-map "x"
+    ;; #'(lambda nil (interactive) (org-agenda-todo "CANCELLED")))
 
   ;; These functions are defined later in the file.
-  (define-key org-todo-state-map "D" #'fc/org-agenda-inherit-deadline))
+  ;; (define-key org-todo-state-map "D" #'fc/org-agenda-inherit-deadline))
 
 
 ;;org-tags
@@ -135,7 +138,7 @@
                       ("note" . ?N)
                       ("study" . ?s)
                       ("goal" . ?g)
-                      ("tweak" . ?t)
+                      ("today" . ?t)
                       ("write" . ?w)
                       ("essential" . ?e)
                       ("waiting" . ?a)
@@ -309,7 +312,13 @@ as the default task."
 ;; Custom views for Agenda
 (setq org-agenda-custom-commands
       (quote (("a" "The Agenda"
-               ((agenda "" ((org-agenda-overriding-header
+               ((tags-todo "+today"
+                           ((org-agenda-overriding-header
+                             "Complete these tasks today")
+                            (org-tags-match-list-sublevels t)
+                            (org-agenda-sorting-strategy
+                             '(effort-up category-keep))))
+                (agenda "" ((org-agenda-overriding-header
                              "Deadlines and Scheduled")))
                 (tags-todo "+release-future|+next-future|+imp-future"
                            ((org-agenda-overriding-header

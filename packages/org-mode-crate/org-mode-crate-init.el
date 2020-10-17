@@ -20,7 +20,7 @@
 ;; to your .emacs file
 
 ;;; Code:
-
+(require 'org-agenda)
 
 (when (not (boundp 'org-directory))
   (error "org-directory is unset. Please refer to instructions in the README"))
@@ -63,7 +63,7 @@
      (require 'org-key-bindings)
      (require 'org-config)))
 
-(org-agenda-restore-windows-after-quit t)
+(setq org-agenda-restore-windows-after-quit t)
 
 (message "Press <f12> to get started with your agenda...")
 (provide 'org-mode-crate-init)

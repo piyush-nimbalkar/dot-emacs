@@ -65,10 +65,10 @@
 (autoload 'idomenu "idomenu" nil t)
 
 ;; Auto Complete
-(add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
-(ac-config-default)
+;; (add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
+;; (require 'auto-complete-config)
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
+;; (ac-config-default)
 
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
@@ -131,7 +131,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Enable Linum Mode globally
-(setq linum-format "%3d |")
+(setq linum-format " %3d |")
 (global-linum-mode 1)
 
 ;; Show Parenthesis
@@ -145,9 +145,9 @@
 
 ;; Switch Buffers
 (global-set-key [s-right] 'next-buffer)
-(global-set-key [M-right] 'next-buffer)
 (global-set-key [s-left] 'previous-buffer)
-(global-set-key [M-left] 'previous-buffer)
+;; (global-set-key [M-right] 'next-buffer)
+;; (global-set-key [M-left] 'previous-buffer)
 
 ;; Switch Frames
 (global-set-key [C-tab] 'next-multiframe-window)
@@ -269,6 +269,9 @@
  '(js2-basic-offset 2)
  '(js2-cleanup-whitespace t)
  '(js2-indent-on-enter-key t)
+ '(package-selected-packages
+   (quote
+    (company-go company exec-path-from-shell yaml-mode ruby-mode puppet-mode projectile paredit jump js2-mode ido-vertical-mode haml-mode go-mode go-autocomplete darcula-theme css-mode autopair)))
  '(user-mail-address "piyushmnimbalkar@gmail.com"))
 
 ;; Js2 Mode
@@ -322,6 +325,7 @@
 (setq org-directory "~/Dropbox/Notes")
 (require 'org-mode-crate-init)
 (global-set-key (kbd "C-c t") 'org-set-tags)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 (add-hook 'org-mode-hook
           '(lambda ()
@@ -395,12 +399,12 @@
   (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
   (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
 
-  (auto-complete-mode 1))                         ; Enable auto-complete mode
-
+  ;; (auto-complete-mode 1))                         ; Enable auto-complete mode
+)
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
-(with-eval-after-load 'go-mode
-  (require 'go-autocomplete))
+;; (with-eval-after-load 'go-mode
+  ;; (require 'go-autocomplete))
 
 (add-to-list 'load-path "~/.emacs.d/packages/go-guru")
 (require 'go-guru)
@@ -413,5 +417,16 @@
 
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "M-N") 'projectile-find-file)
+
+(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'go-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends) '(company-go))
+            (company-mode)))
+
+(setq company-frontends
+      '(company-pseudo-tooltip-unless-just-one-frontend
+        company-preview-frontend
+        company-echo-metadata-frontend))
 
 (server-start)
