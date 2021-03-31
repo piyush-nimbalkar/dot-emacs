@@ -1,6 +1,8 @@
 # -*- mode: snippet -*-
-# name: package
-# key: pack
+# name: const
+# key: const
 # contributor : @atotto
 # --
-package ${1:main}
+const (
+	$0
+)

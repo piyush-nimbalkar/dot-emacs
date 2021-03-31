@@ -1,6 +1,8 @@
 # -*- mode: snippet -*-
-# name: package
-# key: pack
+# name: if
+# key: if
 # contributor : @atotto
 # --
-package ${1:main}
+if $1 {
+	$0
+}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logrus errorf
+# key: errorf
+# contributor : @piyush
+# --
+logrus.Errorf("$1", $0)

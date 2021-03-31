@@ -3,6 +3,6 @@
 # key: init
 # contributor : @atotto
 # --
-func init(){
+func init() {
 	$0
 }

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logrus warnf
+# key: warnf
+# contributor : @piyush
+# --
+logrus.Warnf("$1", $0)

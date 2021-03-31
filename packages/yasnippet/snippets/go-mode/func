@@ -3,7 +3,6 @@
 # key: func
 # contributor : @atotto
 # --
-//
-func ($2) $1() {
+func ($3) $1($2) $4 {
 	$0
 }
