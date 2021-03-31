@@ -401,6 +401,9 @@
 (add-to-list 'load-path "~/.emacs.d/packages/go-guru")
 (require 'go-guru)
 
+(require 'lsp-mode)
+(add-hook 'go-mode-hook #'lsp-deferred)
+
 ;; Projectile Mode
 (projectile-mode)
 (defun my-switch-project-hook ()
