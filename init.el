@@ -8,11 +8,6 @@
 
 (require 'cl)
 
-;; Emacs Package Repositories
-(package-initialize)
-(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-
 ;; Initialize Color Theme
 ;; (add-to-list 'load-path "~/.emacs.d/packages/color-theme")
 ;; (require 'color-theme)
@@ -63,12 +58,6 @@
 (add-to-list 'load-path "~/.emacs.d/packages/idomenu")
 (require 'idomenu)
 (autoload 'idomenu "idomenu" nil t)
-
-;; Auto Complete
-;; (add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
-;; (require 'auto-complete-config)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/ac-dict")
-;; (ac-config-default)
 
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
@@ -160,8 +149,8 @@
 
 ;; Emacs Package Repositories
 (package-initialize)
-(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "http://elpa.gnu.org/packages/")))
 
 ;; Copy Current Line
 (defun copy-line (arg)
@@ -388,13 +377,8 @@
   (local-set-key (kbd "M-P") 'recompile)          ; Redo most recent compile cmd
   (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
   (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
-
-  ;; (auto-complete-mode 1))                         ; Enable auto-complete mode
 )
 (add-hook 'go-mode-hook 'my-go-mode-hook)
-
-;; (with-eval-after-load 'go-mode
-  ;; (require 'go-autocomplete))
 
 (add-to-list 'load-path "~/.emacs.d/packages/go-guru")
 (require 'go-guru)
