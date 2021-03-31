@@ -284,18 +284,10 @@
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; Yasnippet Mode
-(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
 (require 'yasnippet)
-(setq yas/snippet-dirs "~/.emacs.d/packages/yasnippet/snippets")
-(yas/initialize)
 (yas/global-mode 1)
 (global-set-key [s-tab] 'yas/expand)
 
-;; Dropdown List for yasnipppet completions
-(require 'dropdown-list)
-(setq yas/prompt-functions '(yas/dropdown-prompt
-                             yas/ido-prompt
-                             yas/completing-prompt))
 
 ;; Zencoding Mode
 (add-to-list 'load-path "~/.emacs.d/packages/zencoding/")

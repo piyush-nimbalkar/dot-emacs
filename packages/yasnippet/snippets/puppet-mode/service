@@ -1,8 +1,0 @@
-# name: service { ... }
-# key: service
-# key: ser
-# --
-service {'${title}':
-  ensure => ${running},
-  $0
-}

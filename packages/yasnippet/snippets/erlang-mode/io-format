@@ -1,4 +1,0 @@
-# name: io:format("...")
-# key: fo
-# --
-io:format("$1")$0

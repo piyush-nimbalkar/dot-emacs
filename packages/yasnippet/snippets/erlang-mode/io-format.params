@@ -1,4 +1,0 @@
-# name: io:format("...", [...])
-# key: for
-# --
-io:format("$1", [$2])$0

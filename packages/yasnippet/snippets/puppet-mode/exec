@@ -1,7 +1,0 @@
-# name: exec { ... }
-# key: exec
-# --
-exec {'${title_or_command}':
-  command => "${command}",
-  $0
-}

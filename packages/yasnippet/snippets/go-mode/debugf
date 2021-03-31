@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: logrus debugf
-# key: debugf
-# contributor : @piyush
-# --
-logrus.Debugf("$1", $0)
