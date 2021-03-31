@@ -72,7 +72,7 @@
 
 (custom-theme-set-faces
  'darcula
- '(default ((t (:inherit nil :stipple nil :background "#222222" :foreground "#a9b7c6"
+ '(default ((t (:inherit nil :stipple nil :background "#181818" :foreground "#a9b7c6"
                          :inverse-video nil :box nil :strike-through nil :overline nil
                          :underline nil :slant normal :weight ultra-light :height 140
                          :width normal :foundry nil))))
@@ -151,7 +151,7 @@
  '(git-gutter:deleted ((t (:foreground "#cc7832"))))
  '(isearch ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#bd3612" :background "#042028"))))
  '(isearch-fail ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#bd3612" :background "#042028"))))
- '(linum ((t (:inherit 'default :foreground "#666666"))))
+ '(linum ((t (:inherit 'default :foreground "#555555"))))
  '(lazy-highlight ((t (:weight normal :slant normal :underline nil :inverse-video t :foreground "#a57705" :background "#042028"))))
  '(go-guru-hl-identifier-face ((t (:inherit 'default :background "#2f4f4f"))))
  '(compilation-info ((t (:weight bold :foreground "#a6c25c" :underline nil))))
