@@ -352,12 +352,12 @@
 
   (local-set-key (kbd "M-.") 'godef-jump)         ; Go to definition
   (local-set-key (kbd "M-*") 'pop-tag-mark)       ; Return from whence you came
-  (local-set-key (kbd "M-p") 'compile)            ; Invoke compiler
-  (local-set-key (kbd "M-P") 'recompile)          ; Redo most recent compile cmd
-  (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
-  (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
 )
 (add-hook 'go-mode-hook 'my-go-mode-hook)
+(add-hook 'go-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends) '(company-go))
+            (company-mode)))
 
 (add-to-list 'load-path "~/.emacs.d/packages/go-guru")
 (require 'go-guru)
@@ -381,18 +381,17 @@
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "M-N") 'projectile-find-file)
 
-(add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'go-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends) '(company-go))
-            (company-mode)))
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
+;; Company mode
+(add-hook 'after-init-hook 'global-company-mode)
 (setq company-frontends
       '(company-pseudo-tooltip-unless-just-one-frontend
         company-preview-frontend
         company-echo-metadata-frontend))
+(setq company-idle-delay .1)
+(setq company-minimum-prefix-length 2)
 
 (setq-default fill-column 80)
 
