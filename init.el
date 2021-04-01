@@ -267,7 +267,7 @@
  '(js2-indent-on-enter-key t)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet lsp-go company-lsp lsp-mode ruby-mode puppet-mode projectile paredit jump js2-mode ido-vertical-mode idea-darkula-theme haml-mode exec-path-from-shell darcula-theme css-mode company-go)))
+    (magit yasnippet-snippets yasnippet lsp-go company-lsp lsp-mode ruby-mode puppet-mode projectile paredit jump js2-mode ido-vertical-mode idea-darkula-theme haml-mode exec-path-from-shell darcula-theme css-mode company-go)))
  '(user-mail-address "piyushmnimbalkar@gmail.com")
  '(yas-global-mode t))
 
@@ -315,9 +315,8 @@
              (define-key org-mode-map [(control tab)] nil)))
 
 ;; Magit Mode
-;; (add-to-list 'load-path "~/.emacs.d/elpa/magit-1.2.0")
-;; (require 'magit)
-;; (global-set-key (kbd "C-c C-g") 'magit-status)
+(require 'magit)
+(global-set-key (kbd "C-c C-g") 'magit-status)
 
 ;; Paredit Mode
 (add-to-list 'load-path "~/.emacs.d/elpa/paredit-22")
