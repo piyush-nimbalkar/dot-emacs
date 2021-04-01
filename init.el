@@ -401,6 +401,8 @@
           (lambda ()
             (set (make-local-variable 'company-backends) '(company-go))
             (company-mode)))
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 (setq company-frontends
       '(company-pseudo-tooltip-unless-just-one-frontend
