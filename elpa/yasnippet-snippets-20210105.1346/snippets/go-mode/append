@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: for append
+# key: append
+# contributor : @piyush
+# --
+$1 = append($1, $0)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logrus infof
+# key: infof
+# contributor : @piyush
+# --
+logrus.Infof("$1", $0)
