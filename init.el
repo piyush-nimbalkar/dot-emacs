@@ -41,24 +41,6 @@
   (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 (global-set-key [f11] 'toggle-fullscreen)
 
-;; Enable Ido Mode with some attributes
-(ido-mode 1)
-(ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
-
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-everywhere t
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point 'guess
-      ido-max-prospects 5
-      confirm-nonexistent-file-or-buffer nil)
-
-;; IdoMenu - Easy toggling between functions of a file
-(add-to-list 'load-path "~/.emacs.d/packages/idomenu")
-(require 'idomenu)
-(autoload 'idomenu "idomenu" nil t)
-
 ;; Open Emacs In Full Screen Mode By Default
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
@@ -408,5 +390,23 @@
       '(company-pseudo-tooltip-unless-just-one-frontend
         company-preview-frontend
         company-echo-metadata-frontend))
+
+;; Enable Ido Mode with some attributes
+(ido-mode 1)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
+
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-everywhere t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 5
+      confirm-nonexistent-file-or-buffer nil)
+
+;; IdoMenu - Easy toggling between functions of a file
+(add-to-list 'load-path "~/.emacs.d/packages/idomenu")
+(require 'idomenu)
+(autoload 'idomenu "idomenu" nil t)
 
 (server-start)
