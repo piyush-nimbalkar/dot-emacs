@@ -64,16 +64,13 @@
 (setq-default c-basic-offset 4)
 
 ;; Default tab width
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 
 ;; Fontsize := 10
 ;; (set-face-attribute 'default nil :height 110)
 
 ;; Increasing the line spacing
 (setq-default line-spacing 5)
-
-;; Inserts 'TAB' character instead of spaces
-(setq-default indent-tabs-mode t)
 
 ;; Confirm before exiting Emacs
 (setq confirm-kill-emacs 'y-or-n-p)
