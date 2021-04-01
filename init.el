@@ -239,14 +239,40 @@
  '(ac-modes
    (quote
     (emacs-lisp-mode lisp-mode lisp-interaction-mode slime-repl-mode c-mode cc-mode c++-mode java-mode malabar-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode haskell-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode ts-mode puppet-mode org-mode)))
+ '(custom-safe-themes
+   (quote
+    ("a91f190d93bc5d70003c9fa41282574f54ca602c5ad129d1bf559e63d3db6410" "45d65333e3deca701eb04e8404246e77a7ada931492477f0923c89c68843e2aa" "a53718620df861f3a8061867f9952201fcb27e08d3aad97fded557fe3399e16d" "ea102a31354bb3a348ac14ab24795458c43b9026e3962bb1b1c1ff35b27c101a" "ecda3de644eb6ac58b03eb981b5afed90d398ffe868f59d36c79bd1fe9037c10" "82b67c7e21c3b12be7b569af7c84ec0fb2d62105629a173e2479e1053cff94bd" default)))
+ '(electric-indent-mode t)
+ '(electric-pair-mode nil)
+ '(ensime-sem-high-faces
+   (quote
+    ((var :foreground "#9876aa" :underline
+          (:style wave :color "yellow"))
+     (val :foreground "#9876aa")
+     (varField :slant italic)
+     (valField :foreground "#9876aa" :slant italic)
+     (functionCall :foreground "#a9b7c6")
+     (implicitConversion :underline
+                         (:color "#808080"))
+     (implicitParams :underline
+                     (:color "#808080"))
+     (operator :foreground "#cc7832")
+     (param :foreground "#a9b7c6")
+     (class :foreground "#4e807d")
+     (trait :foreground "#4e807d" :slant italic)
+     (object :foreground "#6897bb" :slant italic)
+     (package :foreground "#cc7832")
+     (deprecated :strike-through "#a9b7c6"))))
+ '(js-indent-level 4)
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
  '(js2-cleanup-whitespace t)
  '(js2-indent-on-enter-key t)
  '(package-selected-packages
    (quote
-    (company-go company exec-path-from-shell yaml-mode ruby-mode puppet-mode projectile paredit jump js2-mode ido-vertical-mode haml-mode go-mode go-autocomplete darcula-theme css-mode autopair)))
- '(user-mail-address "piyushmnimbalkar@gmail.com"))
+    (yasnippet-snippets yasnippet lsp-go company-lsp lsp-mode ruby-mode puppet-mode projectile paredit jump js2-mode ido-vertical-mode idea-darkula-theme haml-mode exec-path-from-shell darcula-theme css-mode company-go)))
+ '(user-mail-address "piyushmnimbalkar@gmail.com")
+ '(yas-global-mode t))
 
 ;; Js2 Mode
 (autoload 'js2-mode "js2" nil t)
@@ -414,3 +440,11 @@
 (autoload 'idomenu "idomenu" nil t)
 
 (server-start)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:inherit hl-line :foreground "color-243"))))
+ '(company-preview-common ((t (:inherit company-preview))))
+ '(company-preview-search ((t (:inherit company-preview :background "#00707d")))))
