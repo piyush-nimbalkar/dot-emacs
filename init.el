@@ -317,9 +317,6 @@
 (require 'slime)
 (slime-setup '(slime-fancy))
 
-;; Initiate the autopair mode globally
-(autopair-global-mode)
-
 ;; Avoid scroll-jumping because it's really irritating
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
