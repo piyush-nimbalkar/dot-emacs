@@ -57,6 +57,9 @@
 ;; Undo
 (global-set-key (kbd "C-z") 'undo)
 
+;; Delete word backward
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+
 ;; Default tab width for C
 (setq-default c-basic-offset 4)
 
@@ -390,6 +393,11 @@
       '(company-pseudo-tooltip-unless-just-one-frontend
         company-preview-frontend
         company-echo-metadata-frontend))
+
+(setq-default fill-column 80)
+
+;; Disables pinging when you try to ido find-file at point
+(setq ffap-machine-p-known 'reject)
 
 ;; Enable Ido Mode with some attributes
 (ido-mode 1)
