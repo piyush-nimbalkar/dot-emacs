@@ -267,16 +267,10 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-;; Yaml Mode
-(add-to-list 'load-path "~/.emacs.d/elpa/yaml-mode-0.0.5")
-(autoload 'yaml-mode "yaml-mode")
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-
 ;; Yasnippet Mode
 (require 'yasnippet)
 (yas/global-mode 1)
 (global-set-key [s-tab] 'yas/expand)
-
 
 ;; Zencoding Mode
 (add-to-list 'load-path "~/.emacs.d/packages/zencoding/")
